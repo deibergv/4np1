@@ -33,4 +33,4 @@ function [Xk] = div_t(x,tol)
 endfunction
 
 
-#[Xk] = div_t(5,10^-3)
+%[Xk,k] = div_t(5,10^-3)
