@@ -1,5 +1,5 @@
 %pkg load symbolic;
-%Función Transcendental de sen(x)
+%Función Transcendental de cos(x)
 %
 function [Sk] = cos_t(x,tol)
   k=1;%Iteracion
@@ -7,7 +7,7 @@ function [Sk] = cos_t(x,tol)
   error=tol+1;%Inicializar error
   while error>=tol %Condición de parada
     temp=div_t(factorial(2*k),tol)
-    Sk_nuevo=((-1)^k)*(x^(2*k))*temp + Sk; %Aproximación de la función senoidal
+    Sk_nuevo=((-1)^k)*(x^(2*k))*temp + Sk; %Aproximación de la función cos
     error=abs(Sk_nuevo-Sk);%Calcular error
     Sk_nuevo=Sk;
     k=k+1;
