@@ -1,9 +1,9 @@
 %
-%Función Transcendental de e^x
+%Función Transcendental de a^x
 %
 function [Sk] = power_t(x,a)
   if(x>0)
-    Sk=x^a
+    Sk=x^a;
   endif
 endfunction
 

@@ -1,12 +1,13 @@
 %pkg load symbolic;
 %Función Transcendental de sen(x)
 %
-function [Sk] = sin_t(x,tol)
+function [Sk] = sin_t(x)
+  tol=10^-8;
   k=1;%Iteracion
   Sk=1;%Resultado
   error=tol+1;%Inicializar error
   while error>=tol %Condición de parada
-    temp=div_t(factorial(2*k+1),tol)
+    temp=div_t(factorial(2*k+1))
     Sk_nuevo=((-1)^k)*(x^(2*k+1))*temp + Sk; %Aproximación de la función senoidal
     error=abs(Sk_nuevo-Sk);%Calcular error
     Sk_nuevo=Sk;

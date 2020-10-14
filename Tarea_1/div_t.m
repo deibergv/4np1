@@ -1,7 +1,8 @@
 %pkg load symbolic;
 %Función Transcendental de la división
 %
-function [Xk] = div_t(x,tol)
+function [Xk] = div_t(x)
+  tol=10^-8;
   Xk=0;#Resultado
   eps=2.2204*10^(-16); %Precisión relativa del punto flotante
   error=tol+1; %Error
