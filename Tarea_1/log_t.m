@@ -3,7 +3,9 @@
 % Se sabe que loga(x)=ln(x)/ln(a)
 %
 function [Sk] = log_t(x,a,tol)
-  sk=ln_t(x,tol)*(div_t(ln_t(a,tol),tol))
+  if (x>0 && a>0 && a=! 1) 
+    Sk=ln_t(x,tol)*(div_t(ln_t(a,tol),tol))
+   endif
 endfunction
 
 

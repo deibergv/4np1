@@ -14,4 +14,4 @@ function [Sk] = exp_t(x,tol)
 endfunction
 
 
-[Sk] = exp_t(1,10^-3)
+%[Sk] = exp_t(1,10^-3)
