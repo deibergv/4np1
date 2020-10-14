@@ -2,7 +2,9 @@
 %Función Transcendental de e^x
 %
 function [Sk] = power_t(x,a)
-  Sk=x^a
+  if(x>0)
+    Sk=x^a
+  endif
 endfunction
 
 
