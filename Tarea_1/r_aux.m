@@ -4,7 +4,9 @@
 % x : radicando
 % a : índice (grado de la raíz)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% sk  : Resultado (Retorna el valor de la raíz x^(1/a)
+% Salidas
+% x  : Resultado (Retorna el valor de la raíz x^(1/a)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Se emplea el método de Newton-Raphson para el cálculo de la función
 pkg load symbolic;
 
