@@ -1,12 +1,18 @@
-%pkg load symbolic;
-%Función Transcendental de sen^-1(x)
-%
+% Función Transcendental de sen^-1(x)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parámetros:
+% x : valor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Salidas
+% Sk  : Resultado aproximación de 1/x
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [Sk] = asin_t(x)
   tol=10^-8;
   k=1;%Iteracion
   Sk=1;%Resultado
   error=tol+1;%Inicializar error
-  while error>=tol %Condición de parada
+  iterMax = 2500;
+  while (error>=tol) %Condición de parada
     temp=div_t((4^k)*((factorial(k))^2)*(2*k+1));
     Sk_nuevo=factorial(2*k)*temp*x^(2*k+1) + Sk; %Aproximación de la función senoidal
     error=abs(Sk_nuevo-Sk);%Calcular error
