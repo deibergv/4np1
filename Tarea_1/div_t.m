@@ -1,6 +1,12 @@
-%pkg load symbolic;
-%Función Transcendental de la división
-%
+% Función Transcendental de la división
+% Calcula x^-1 o 1/x
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parámetros:
+% x : denominador
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Salidas
+% Sk  : Resultado aproximación de 1/x
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [Xk] = div_t(x)
   tol=10^-8;
   Xk=0;#Resultado
