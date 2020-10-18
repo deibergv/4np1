@@ -40,4 +40,4 @@ function x = r_aux(x, a)
             ++k;
          end
     endwhile
-end
+endfunction

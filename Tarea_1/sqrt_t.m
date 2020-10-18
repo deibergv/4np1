@@ -21,4 +21,4 @@ function Sk = sqrt_t(x)
       Sk = root_t(x, 2);%Llama a la función root_t(radicando, índice)
                         %Donde el radicando es x y el índice es 2
     end
-end
+endfunction
