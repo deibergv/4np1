@@ -37,4 +37,4 @@ function Sk = root_t(x,a)
       Sk = r_aux(x, a);
     endif
   endif
-end
+endfunction
