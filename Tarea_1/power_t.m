@@ -16,6 +16,7 @@ function   Sk = power_t(x,a)
     while (k>x)
       Sk=Sk*div_t(a);
       --k;
+    endwhile
   endif
 endfunction
 
