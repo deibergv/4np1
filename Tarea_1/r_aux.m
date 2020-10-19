@@ -29,8 +29,7 @@ function x = r_aux(x, a)
             x = [];
             k = []; 
             error = [];
-            disp('Error: La raíz se indefine.')
-        endif
+            disp('Error: La raíz se indefine.');
         else
             x = x0 - (f1(x0)/dev); % Aproximación de la raíz
                                    % x0 - ((x0^a-x)/(x0^a-x)')
@@ -38,6 +37,6 @@ function x = r_aux(x, a)
             e = [e error];
             x0 = x;
             ++k;
-         end
+         endif
     endwhile
 endfunction
