@@ -10,3 +10,6 @@
 function Sk = tanh(x) 
   Sk=sinh(x)*div_t(cosh(x));
 endfunction
+
+% tanh(0.3) = 0.29131
+% tanh_t(0.3)

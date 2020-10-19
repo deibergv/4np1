@@ -1,6 +1,11 @@
-%
-%Función Transcendental de sin(x)
-%
+% Función Transcendental de sen(x)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parámetros:
+% x : valor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Salidas
+% Sk  : Resultado aproximación
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Sk = sin_t(x)
   tol=10^-8;
   k=0;%Iteracion

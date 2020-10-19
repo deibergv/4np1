@@ -5,11 +5,9 @@
 % x : valor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salidas
-% Sk  : Resultado aproximación de 1/x
+% Sk  : Resultado aproximación
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Sk = acos_t(x)
-  Sk=sym((pi_t()*div_t(2))-asin_t(x))
+  Sk=(pi_t()*div_t(2)) - asin_t(x);
 endfunction
 
-
-%[k = sin_t(90*pi/180,10^-3)

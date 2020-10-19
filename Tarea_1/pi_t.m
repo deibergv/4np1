@@ -1,5 +1,5 @@
 % Función para aproximar el valor de pi
-% Por medio del método de Gauss-Legendre
+% Por medio de la Serie de Leibniz: Sk1 = Sk + [((-1)^n)/(2n+1)]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Parámetros:
 % N/A
@@ -8,26 +8,18 @@
 % Sk  : Resultado aproximación de pi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Sk = pi_t()
-  a=1;
-  b=div_t(sqrt_t(2));
-  t=div_t(4);
-  p=1;
-  k=1;%Iteracion
-  Sk=1;%Resultado
-  error=tol+1;%Inicializar error
+  k=0;%Iteracion
+  Sk=0;%Resultado
   iterMax = 2500;
   tol=10^-8;
-  while (error>=tol || iterMax > k) %Condición de parada
-    x=(a+b)*div_t(2);
-    y=sqrt_t(a*b);
-    t=t-(p*(a-x)^2);
-    a=x+1;
-    b=y+1;
-    p=2*p;
-    error=abs(a-b);%Calcular error
-    k=k+1;
+  error=tol+1;%Inicializar error
+  while (tol < error && k < iterMax) %Condición de parada
+    %temp = (2*k) +1;
+    Sk_temp = (((-1)^k) * div_t((2*k) + 1 )) + Sk;
+    error = abs(Sk_temp - Sk); %Calcular error
+    Sk = Sk_temp;
+    k = k+1;
   endwhile
-  temp=(a+b)^2
-  Sk=temp*div_t(4*t);
+  Sk = Sk * 4; % Para obtener el pi completo 
 endfunction
 

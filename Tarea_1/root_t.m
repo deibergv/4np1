@@ -5,7 +5,7 @@
 % a : índice
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salidas
-% Sk  : Resultado (Retorna el valor de la raíz x^(1/a)
+% Sk  : Resultado (Retorna el valor de la raíz x^(1/a))
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Se emplea la función r_aux
 
@@ -15,7 +15,7 @@ function Sk = root_t(x,a)
   %Caso: índice par
   elseif ( rem(a, 2) == 0 && a>0)%Cálculo del residuo
     if(x > 0)
-      Sk = r_aux(x, a);
+      Sk = r_aux(x,a);
     else
       disp('Error: El radicando debe ser mayor o igual a cero.')
     endif
@@ -33,3 +33,5 @@ function Sk = root_t(x,a)
     endif
   endif
 endfunction
+
+% root_t(16,2)
