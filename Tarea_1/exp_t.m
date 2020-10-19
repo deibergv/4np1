@@ -16,10 +16,9 @@ function Sk = exp_t(x)
   endwhile
   if(x==0)
     Sk=1;
-  endif
   elseif(x<0)
     Sk=div_t(Sk);
-  end
+  endif
   
 endfunction
 
