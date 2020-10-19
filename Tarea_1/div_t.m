@@ -1,18 +1,20 @@
-% Función Transcendental de la división
+% Funciï¿½n Transcendental de la divisiï¿½n
 % Calcula x^-1 o 1/x
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Parámetros:
+% Parï¿½metros:
 % x : denominador
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salidas
-% Sk  : Resultado aproximación de 1/x
+% Sk  : Resultado aproximaciï¿½n de 1/x
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [Xk] = div_t(x)
   tol=10^-8;
   Xk=0;#Resultado
-  eps=2.2204*10^(-16); %Precisión relativa del punto flotante
+  eps=2.2204*10^(-16); %Precisiï¿½n relativa del punto flotante
   error=tol+1; %Error
   k=1;%Iteraciones
+  tol = 10^-8; % Tolerancia
+  iterMax = 2500; %Iteraciones mï¿½ximas del cï¿½lculo
   %-------------------------------------
   %%Establecer el valor inicial de X0
   if (factorial(80)<x<=factorial(100))
@@ -31,13 +33,13 @@ function [Xk] = div_t(x)
     Xk=eps^2;
   endif
   %----------------------------------
-  while error>=tol %Condición de parada error Mayor o igual que la tolerancia
-    Xk_nuevo=Xk*(2-(x*Xk));%%Aproximación de la división
+  while (tol < error && k < iterMax) %Condiciï¿½n de parada
+    Xk_nuevo=Xk*(2-(x*Xk));%%Aproximaciï¿½n de la divisiï¿½n
     error=abs((Xk_nuevo-Xk)/Xk_nuevo);%%Calcular error
     Xk=Xk_nuevo;
     k=k+1;%Iteraciones
   endwhile
 endfunction
 
-
-%[Xk,k] = div_t(5,10^-3)
+% 1/5 = 0.2
+% div_t(5,10^-3)

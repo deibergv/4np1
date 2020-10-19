@@ -1,13 +1,13 @@
 %
-%Función Transcendental de e^x
+%Funciï¿½n Transcendental de e^x
 %
 function Sk = exp_t(x)
-  tol=10^-8;
   Sk=1;%Resultado
   k=1;%iteracion
   error=tol+1;
-  
-  while error>=tol %Condición de parada error Mayor o igual que la tolerancia
+  tol = 10^-8; % Tolerancia
+  iterMax = 2500; %Iteraciones mï¿½ximas del cï¿½lculo
+  while (tol < error && k < iterMax) %Condiciï¿½n de parada
     abs(x);
     Sk_nuevo = (x^k)*(div_t(factorial(k)))+Sk;
     error=abs(Sk_nuevo-Sk); %Calcular error
@@ -22,5 +22,7 @@ function Sk = exp_t(x)
   
 endfunction
 
-
-%[Sk] = exp_t(1,10^-3)
+% exp(5) =  148.41
+% exp_t(5,10^-3)
+% exp(-5) =  0.0067379
+% exp_t(-5,10^-3)

@@ -1,22 +1,26 @@
-% Función que calcula la raíz cuadrada de un número dado
+%
+% Funciï¿½n que calcula la raï¿½z cuadrada de un nï¿½mero dado
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Parámetros:
+% Parï¿½metros:
 % x : radicando
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salidas
-% Sk  : Resultado (Retorna el valor de la raíz x^(1/2)
+% Sk  : Resultado (Retorna el valor de la raï¿½z x^(1/2)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Se emplea la función root_t
+% Se emplea la funciï¿½n root_t
 function Sk = sqrt_t(x)
-    % La raiz cuadrada solo recibe numeros >= 0
+  % La raiz cuadrada solo recibe numeros >= 0
   if(x < 0)
     disp('ERROR: El valor de x debe ser mayor que cero');
-  elseif (x == 0)% La raíz cuadrada de 0 es 0
+  elseif (x == 0)% La raï¿½z cuadrada de 0 es 0
     Sk = 0;
   else
-    Sk = root_t(x, 2);%Llama a la función root_t(radicando, índice)
-                        %Donde el radicando es x y el índice es 2
-  end
-
-  
+    Sk = root_t(x, 2);%Llama a la funciï¿½n root_t(radicando, ï¿½ndice)
+  endif                %Donde el radicando es x y el ï¿½ndice es 2
 endfunction
+
+
+
+% sqrt(16) = 4 
+% sqrt_t(16)

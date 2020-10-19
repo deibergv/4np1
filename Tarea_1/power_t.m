@@ -3,7 +3,7 @@
 %x Exponente de una potencia
 %a Base de la potencia
 %
-function   Sk = power_t(x,a)
+function Sk = power_t(x,a)
   if(x>0)% Caso exponente positivo
     Sk=x^a;
   endif
@@ -20,5 +20,7 @@ function   Sk = power_t(x,a)
   endif
 endfunction
 
-
-%[Sk] = exp_t(1,10^-3)
+% power(2,3) = 8
+% power_t(2,3)
+% power(2,-3) = 0.12500
+% power_t(2,-3)
