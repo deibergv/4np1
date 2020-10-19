@@ -1,4 +1,4 @@
-%pkg load symbolic;
+%
 %Función Transcendental de la división
 %
 function [Xk] = div_t(x)
@@ -7,6 +7,8 @@ function [Xk] = div_t(x)
   eps=2.2204*10^(-16); %Precisión relativa del punto flotante
   error=tol+1; %Error
   k=1;%Iteraciones
+  tol = 10^-8; % Tolerancia
+  iterMax = 2500; %Iteraciones máximas del cálculo
   %-------------------------------------
   %%Establecer el valor inicial de X0
   if (factorial(80)<x<=factorial(100))
@@ -25,7 +27,7 @@ function [Xk] = div_t(x)
     Xk=eps^2;
   endif
   %----------------------------------
-  while error>=tol %Condición de parada error Mayor o igual que la tolerancia
+  while (tol < error && k < iterMax) %Condición de parada
     Xk_nuevo=Xk*(2-(x*Xk));%%Aproximación de la división
     error=abs((Xk_nuevo-Xk)/Xk_nuevo);%%Calcular error
     Xk=Xk_nuevo;
@@ -33,5 +35,5 @@ function [Xk] = div_t(x)
   endwhile
 endfunction
 
-
-%[Xk,k] = div_t(5,10^-3)
+% 1/5 = 0.2
+% div_t(5,10^-3)

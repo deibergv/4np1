@@ -3,11 +3,12 @@
 %
 function [Sk] = ln_t(x)
   if (x>0)
-    tol=10^-8;
+    tol = 10^-8; % Tolerancia
+    iterMax = 2500; %Iteraciones máximas del cálculo
     Sk=1;%Condicion inicial
     k=1;%iteracion
     error=tol+1;
-    while error>=tol %Condición de parada error Mayor o igual que la tolerancia
+    while (tol < error && k < iterMax) %Condición de parada
       Sk_temp=[div_t(2*k+1)]*[((x-1)*div_t(x+1))^(2*k)]
       Sk_nuevo=Sk_temp+Sk;
       error=abs(Sk_nuevo-Sk); %Calcular error
@@ -21,5 +22,5 @@ function [Sk] = ln_t(x)
     
 endfunction
 
-
-#ln_t(2,10^-3)
+% log(2) =  0.69315
+% ln_t(2,10^-3)

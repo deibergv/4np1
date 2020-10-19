@@ -6,7 +6,9 @@ function [Sk] = exp_t(x)
   Sk=1;%Resultado
   k=1;%iteracion
   error=tol+1;
-  while error>=tol %Condición de parada error Mayor o igual que la tolerancia
+  tol = 10^-8; % Tolerancia
+  iterMax = 2500; %Iteraciones máximas del cálculo
+  while (tol < error && k < iterMax) %Condición de parada
     Sk_nuevo = (x^k)*(div_t(factorial(k)))+Sk;
     error=abs(Sk_nuevo-Sk); %Calcular error
     Sk=Sk_nuevo;
@@ -14,5 +16,7 @@ function [Sk] = exp_t(x)
   endwhile
 endfunction
 
-
-%[Sk] = exp_t(1,10^-3)
+% exp(5) =  148.41
+% exp_t(5,10^-3)
+% exp(-5) =  0.0067379
+% exp_t(-5,10^-3)

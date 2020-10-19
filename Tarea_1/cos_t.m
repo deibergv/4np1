@@ -1,12 +1,13 @@
-%pkg load symbolic;
+%
 %Función Transcendental de cos(x)
 %
 function [Sk] = cos_t(x)
-  tol=10^-8;
+  tol = 10^-8; % Tolerancia
+  iterMax = 2500; %Iteraciones máximas del cálculo
   k=1;%Iteracion
   Sk=1;%Resultado
   error=tol+1;%Inicializar error
-  while error>=tol %Condición de parada
+  while (tol < error && k < iterMax) %Condición de parada
     temp=div_t(factorial(2*k))
     Sk_nuevo=((-1)^k)*(x^(2*k))*temp + Sk; %Aproximación de la función cos
     error=abs(Sk_nuevo-Sk);%Calcular error
@@ -15,5 +16,6 @@ function [Sk] = cos_t(x)
   endwhile
 endfunction
 
+% cos(2*pi) =  1
+% cos_t(2*pi,10^-3)
 
-%[Sk] = sin_t(90*pi/180,10^-3)
