@@ -1,23 +1,24 @@
 %
-%Función Transcendental de sen(x)
+%Función Transcendental de sin(x)
 %
-function [Sk] = sin_t(x)
-  tol = 10^-8; % Tolerancia
-  iterMax = 2500; %Iteraciones máximas del cálculo
-  k=1;%Iteracion
-  Sk=1;%Resultado
+function Sk = sin_t(x)
+  tol=10^-8;
+  k=0;%Iteracion
+  Sk=0;%Resultado
   error=tol+1;%Inicializar error
-  while (tol < error && k < iterMax) %Condición de parada
-    temp=div_t(factorial(2*k+1))
-    Sk_nuevo=((-1)^k)*(x^(2*k+1))*temp + Sk; %Aproximación de la función senoidal
+  iterMax=2500;
+  while (error>=tol && iterMax>k) %Condición de parada
+    temp=div_t(factorial((2*k)+1));
+    Sk_nuevo=((-1)^k)*(x^((2*k)+1)*temp); %Aproximación de la función senoidal
+    Sk_nuevo=Sk_nuevo+Sk;
     error=abs(Sk_nuevo-Sk);%Calcular error
-    Sk_nuevo=Sk;
+    Sk=Sk_nuevo;
     k=k+1;
   endwhile
 endfunction
 
 % sin(90*pi/180) =  1
-% sin_t(90*pi/180,10^-3)
+% sin_t(90*pi/180)
 
-% sin(2) = 0.90930
-% sin_t(2) = 1???????????????????????
+% sin(2*pi/3) = 0.86603
+% sin_t(2*pi/3) 

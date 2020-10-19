@@ -1,44 +1,48 @@
-% Funciï¿½n Transcendental de la divisiï¿½n
+% Funcion Transcendental de la division
 % Calcula x^-1 o 1/x
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Parï¿½metros:
+% Parámetros:
 % x : denominador
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Salidas
-% Sk  : Resultado aproximaciï¿½n de 1/x
+% Sk  : Resultado aproximacion de 1/x
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [Xk] = div_t(x)
   tol=10^-8;
   Xk=0;#Resultado
-  eps=2.2204*10^(-16); %Precisiï¿½n relativa del punto flotante
+  eps=2.2204*10^(-16); %Precisión relativa del punto flotante
   error=tol+1; %Error
   k=1;%Iteraciones
   tol = 10^-8; % Tolerancia
-  iterMax = 2500; %Iteraciones mï¿½ximas del cï¿½lculo
+  iterMax = 2500; %Iteraciones máximas del cálculo
   %-------------------------------------
   %%Establecer el valor inicial de X0
-  if (factorial(80)<x<=factorial(100))
-    Xk=eps^15;
+  if (x == 0)
+    disp('Error: No es posible dividir entre 0');
+  else
+    if (factorial(80)<x<=factorial(100))
+      Xk=eps^15;
+    endif
+    if (factorial(60)<x<=factorial(80))
+      Xk=eps^11
+    endif
+    if (factorial(40)<x<=factorial(60))
+      Xk=eps^8;
+    endif
+    if (factorial(20)<x<=factorial(40))
+      Xk=eps^4;
+    endif
+    if (factorial(0)<x<=factorial(20))
+      Xk=eps^2;
+    endif
+    %----------------------------------
+    while (tol < error && k < iterMax) %Condición de parada
+      Xk_nuevo=Xk*(2-(x*Xk));%%Aproximación de la división
+      error=abs((Xk_nuevo-Xk)/Xk_nuevo);%%Calcular error
+      Xk=Xk_nuevo;
+      k=k+1;%Iteraciones
+    endwhile
   endif
-  if (factorial(60)<x<=factorial(80))
-    Xk=eps^11
-  endif
-  if (factorial(40)<x<=factorial(60))
-    Xk=eps^8;
-  endif
-  if (factorial(20)<x<=factorial(40))
-    Xk=eps^4;
-  endif
-  if (factorial(0)<x<=factorial(20))
-    Xk=eps^2;
-  endif
-  %----------------------------------
-  while (tol < error && k < iterMax) %Condiciï¿½n de parada
-    Xk_nuevo=Xk*(2-(x*Xk));%%Aproximaciï¿½n de la divisiï¿½n
-    error=abs((Xk_nuevo-Xk)/Xk_nuevo);%%Calcular error
-    Xk=Xk_nuevo;
-    k=k+1;%Iteraciones
-  endwhile
 endfunction
 
 % 1/5 = 0.2
