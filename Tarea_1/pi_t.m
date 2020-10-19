@@ -31,5 +31,3 @@ function Sk = pi_t()
   Sk=temp*div_t(4*t);
 endfunction
 
-
-%[k = sin_t(90*pi/180,10^-3)

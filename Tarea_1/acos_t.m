@@ -8,18 +8,7 @@
 % Sk  : Resultado aproximación de 1/x
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Sk = acos_t(x)
-  tol=10^-8;
-  k=1;%Iteracion
-  Sk=1;%Resultado
-  error=tol+1;%Inicializar error
-  iterMax = 2500;
-  while (error>=tol || iterMax > k) %Condición de parada
-    temp=div_t((4^k)*((factorial(k))^2)*(2*k+1));
-    Sk_nuevo=factorial(2*k)*temp*x^(2*k+1) + Sk; %Aproximación de la función senoidal
-    error=abs(Sk_nuevo-Sk);%Calcular error
-    Sk=Sk_nuevo;
-    k=k+1;
-  endwhile
+  Sk=sym((pi_t()*div_t(2))-asin_t(x))
 endfunction
 
 
